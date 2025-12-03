@@ -3,8 +3,9 @@ package org.generation.MUD.item.effect;
 import org.generation.MUD.Player;
 
 public class AddMP extends Effect {
-    public AddMP(int value) {
-        super(value);
+    int value;
+    public AddMP(int value){
+        this.value = value;
     }
     @Override
     public void applyEffect(Player player) {
