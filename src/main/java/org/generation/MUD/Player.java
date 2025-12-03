@@ -1,5 +1,8 @@
 package org.generation.MUD;
 
+/*
+    LA CLASSE -> PLAYER <- CONTIENE LE CARATTERISTICHE DEL PLAYER!!!
+ */
 public class Player {
     String name;
     String gender;
