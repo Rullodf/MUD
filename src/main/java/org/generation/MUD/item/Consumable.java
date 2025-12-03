@@ -29,7 +29,6 @@ public class Consumable extends Item {
         this.quantity = quantity;
     }
 
-    @Override
     public void useItem(Player player) {
 
         for (Effect effect : effects) {

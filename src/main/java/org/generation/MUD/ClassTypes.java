@@ -1,12 +1,17 @@
 package org.generation.MUD;
 
+import org.generation.MUD.item.Weapon;
+import org.generation.MUD.item.WeaponType;
+
 import java.util.HashMap;
 import java.util.Map;
 
+//Creiamo una mappa di classi predefinite da cui poter attingere in ogni parte del gioco
 public class ClassTypes {
     protected HashMap<String,ClassStats>classes=new HashMap<>();
 
     public ClassTypes() {
+        WeaponType weaponType = new WeaponType();
         classes.put("paladin", new ClassStats(
                 "Paladin",
                 new Stats(

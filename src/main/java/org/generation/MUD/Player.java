@@ -6,10 +6,13 @@ package org.generation.MUD;
 public class Player {
     String name;
     String gender;
-    ClassStats classStats;    //Classe con stats di classe predefinite
+    //Decidiamo di usare classStats come proprietà di player perchè contiene un gruppo di proprietà
+    //che sono logicamente correlate tra loro e possono essere riusate da altre classi
+    ClassStats classStats;          //Classe con stats di classe predefinite
     Stats playerStats;              //Stats attuali del giocatore
     Inventory inventory;
-    
+
+
     public Player(String name, String gender, ClassStats classStats, Inventory inventory, Stats playerStats) {
         this.name = name;
         this.gender = gender;

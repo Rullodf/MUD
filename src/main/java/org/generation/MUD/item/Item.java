@@ -5,13 +5,13 @@ import org.generation.MUD.Player;
 public class Item {
     protected String name, description;
     protected double weight;
-    protected int value;
+    protected int price;
 
-    public Item(String name, double weight, String description, int value) {
+    public Item(String name, double weight, String description, int price) {
         this.name = name;
         this.weight = weight;
         this.description = description;
-        this.value = value;
+        this.price = price;
     }
 
     public String getDescription() {
@@ -38,15 +38,12 @@ public class Item {
         this.weight = weight;
     }
 
-    public int getValue() {
-        return value;
+    public int getPrice() {
+        return price;
     }
 
-    public void setValue(int value) {
-        this.value = value;
+    public void setPrice(int price) {
+        this.price = price;
     }
 
-    public void useItem(Player player){
-
-    }
 }

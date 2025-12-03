@@ -2,6 +2,8 @@ package org.generation.MUD.item.effect;
 
 import org.generation.MUD.Player;
 
+import java.util.HashMap;
+
 public class RemoveVitality extends Effect{
     int value;
     public RemoveVitality(int value){

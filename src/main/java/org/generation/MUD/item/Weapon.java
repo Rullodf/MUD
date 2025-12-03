@@ -2,15 +2,14 @@ package org.generation.MUD.item;
 
 import java.util.HashMap;
 
-public class Weapon {
-    protected String name;
+//LA CLASSE -->Weapon<-- CONTIENE LE INFORMAZIONI DELLE ARMI!!!!!!!!!!!!!!!!!
+public class Weapon extends Item{
     protected int damagePhysical;
     protected int damageMagical;
 
-    public Weapon(String name, int damagePhysical, int damageMagical) {
-        this.name = name;
+    public Weapon(String name, double weight, String description, int price, int damagePhysical, int damageMagical) {
+        super(name, weight, description, price);
         this.damagePhysical = damagePhysical;
         this.damageMagical = damageMagical;
     }
-
 }
