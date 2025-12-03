@@ -11,7 +11,7 @@ import java.util.Arrays;
 public class Consumable extends Item {
     protected int quantity;
     ArrayList<Effect> effects;
-
+                                                                                                //... (var args variable numbers of arguments)
     public Consumable(String name, double weight, String description, int value, int quantity, Effect... effects) {
         super(name, weight, description, value);
         this.quantity = quantity;

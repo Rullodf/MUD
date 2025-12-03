@@ -3,6 +3,8 @@ package org.generation.MUD;
 /*
     LA CLASSE -> STATS <- CONTIENE LE STATISTICHE DEL PLAYER!
  */
+//Stesso ragionamento logico di ClassStast.
+
 public class Stats {
     private int vitality;
     private int strength;

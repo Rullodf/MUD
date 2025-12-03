@@ -11,14 +11,16 @@ public class Player {
     ClassStats classStats;          //Classe con stats di classe predefinite
     Stats playerStats;              //Stats attuali del giocatore
     Inventory inventory;
+    int gold;
 
 
-    public Player(String name, String gender, ClassStats classStats, Inventory inventory, Stats playerStats) {
+    public Player(String name, String gender, ClassStats classStats, Inventory inventory, Stats playerStats, int gold) {
         this.name = name;
         this.gender = gender;
         this.classStats = classStats;
         this.inventory = inventory;
         this.playerStats = playerStats;
+        this.gold = gold ;
     }
 
     public void takeHit(int damage){
