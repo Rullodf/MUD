@@ -1,5 +1,8 @@
 package org.generation.MUD;
 
+/*
+    LA CLASSE -> STATS <- CONTIENE LE STATISTICHE DEL PLAYER!
+ */
 public class Stats {
     private int vitality;
     private int strength;
