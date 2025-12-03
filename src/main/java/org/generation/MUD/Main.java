@@ -8,3 +8,22 @@ public class Main {
         gameEngine.StartGame();
     }
 }
+
+/*
+    Classi:
+        Player
+        NPC
+          |-> FriendlyNPC
+          |-> Monster
+          |-> Boss
+        Inventory
+        Room
+          |-> [varie categorie]
+        Item
+          |-> Weapon
+          |-> Armor
+          |-> Consumable
+          |-> KeyItem
+        SaveHandler
+
+ */
