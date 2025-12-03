@@ -18,6 +18,44 @@ public class Player {
     public void takeHit(int damage){
         playerStats.setVitality(playerStats.getVitality() - damage);
     }
-    
-   
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public ClassStats getClassStats() {
+        return classStats;
+    }
+
+    public void setClassStats(ClassStats classStats) {
+        this.classStats = classStats;
+    }
+
+    public Stats getPlayerStats() {
+        return playerStats;
+    }
+
+    public void setPlayerStats(Stats playerStats) {
+        this.playerStats = playerStats;
+    }
+
+    public Inventory getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(Inventory inventory) {
+        this.inventory = inventory;
+    }
 }
