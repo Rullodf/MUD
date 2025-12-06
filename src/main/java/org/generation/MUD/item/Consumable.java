@@ -17,13 +17,12 @@ public class Consumable extends Item {
         super(name, weight, description, price);
         this.quantity = quantity;
         this.effects = new ArrayList<>();
-        for(Effect effect : effects){
+        for (Effect effect : effects) {
             this.effects.add(effect);
         }
 
         this.effects.add(new RemoveVitality(10));
         this.effects.add(new AddMP(10));
-        this.effects.get(1).
     }
 
     public int getQuantity() {
