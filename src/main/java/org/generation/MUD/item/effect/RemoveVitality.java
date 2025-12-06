@@ -4,7 +4,7 @@ import org.generation.MUD.Player;
 
 import java.util.HashMap;
 
-public class RemoveVitality extends Effect{
+public class RemoveVitality implements Effect{
     int value;
     public RemoveVitality(int value){
         this.value = value;

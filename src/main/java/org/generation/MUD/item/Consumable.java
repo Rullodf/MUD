@@ -12,13 +12,18 @@ public class Consumable extends Item {
     protected int quantity;
     ArrayList<Effect> effects;
 
-    public Consumable(String name, double weight, String description, int value, int quantity, Effect... effects) {
-        super(name, weight, description, value);
+    public Consumable(String name, double weight, String description, int price
+            , int quantity, Effect... effects) {
+        super(name, weight, description, price);
         this.quantity = quantity;
         this.effects = new ArrayList<>();
         for(Effect effect : effects){
             this.effects.add(effect);
         }
+
+        this.effects.add(new RemoveVitality(10));
+        this.effects.add(new AddMP(10));
+        this.effects.get(1).
     }
 
     public int getQuantity() {
