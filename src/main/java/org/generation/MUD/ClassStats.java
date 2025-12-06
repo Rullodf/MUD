@@ -5,6 +5,8 @@ import org.generation.MUD.item.Weapon;
 
 /*
 QUESTA CLASSE--> CLASSSTATS <-- CONTIENE LE CLASSI BASE DEL MUD!!!!!!!!!!!!!!
+Questa classe si occuperà semplicemente di contenere le proprietà che un player avrà di base una volta che ha scelto
+la classe con la quale giocare
  */
 public class ClassStats {
     private final String className;
