@@ -1,10 +1,10 @@
-package org.generation.MUD;
+package org.generation.MUD.room;
 
+import org.generation.MUD.Player;
 import org.generation.MUD.item.Item;
 import org.generation.MUD.npc.Enemy;
 import org.generation.MUD.npc.NPC;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Room {

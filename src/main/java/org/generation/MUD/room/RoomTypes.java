@@ -1,4 +1,4 @@
-package org.generation.MUD;
+package org.generation.MUD.room;
 
 import java.util.HashMap;
 

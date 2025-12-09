@@ -1,4 +1,4 @@
-package org.generation.MUD;
+package org.generation.MUD.room;
 
 //Vi piacerebbe saperlo eh stronzi? la prossima volta siateci u.u
 public enum RoomActions {
