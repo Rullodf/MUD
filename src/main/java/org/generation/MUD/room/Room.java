@@ -34,6 +34,38 @@ public class Room {
     void enteredRoom(Player player) {
         System.out.println(welcomeText);
     }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getWelcomeText() {
+        return welcomeText;
+    }
+
+    public String getComebackText() {
+        return comebackText;
+    }
+
+    public ArrayList<String> getNpcs() {
+        return npcs;
+    }
+
+    public ArrayList<String> getItems() {
+        return items;
+    }
+
+    public ArrayList<String> getEnemies() {
+        return enemies;
+    }
+
+    public ArrayList<String> getExits() {
+        return exits;
+    }
 }
 
 

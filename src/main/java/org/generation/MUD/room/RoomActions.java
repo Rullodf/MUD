@@ -1,6 +1,6 @@
 package org.generation.MUD.room;
 
-//Vi piacerebbe saperlo eh stronzi? la prossima volta siateci u.u
+//Vi piacerebbe saperlo eh stronzi? la prossima volta siateci u.u fanculo
 public enum RoomActions {
     ATTACK("att"),
     TALK("talk"),
