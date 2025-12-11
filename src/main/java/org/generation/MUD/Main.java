@@ -7,8 +7,9 @@ import org.generation.MUD.item.effect.RemoveVitality;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    static void main() {
-//        GameEngine gameEngine = new GameEngine();
+    static void main() throws InterruptedException {
+        GameEngine gameEngine = new GameEngine();
+        gameEngine.stampaAMacchina("Ciao sono una Stringa mi incasino wo", 15);
 //        gameEngine.StartGame();
         int[] array = {1, 2, 3, 4, 5};
     }

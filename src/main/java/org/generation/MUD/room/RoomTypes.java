@@ -17,6 +17,12 @@ public class RoomTypes {
                 null,
                 arrayFromArgs("pianura", "settings")
         ));
+//        roomTypes.put("pianura", new Room(
+//                "pianura1",
+//        """
+//                Ti risvegli in una vasta pianura desolata. Ti guardi intorno e non riesci a vedere
+//                """
+//        ))
     }
 
     public ArrayList<String> arrayFromArgs(String... args) {
