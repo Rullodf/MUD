@@ -1,6 +1,7 @@
 package org.generation.MUD.room;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 
 //creiamo la hashmap da usare in ogni parte del gioco
@@ -38,7 +39,6 @@ public class RoomTypes {
                 "Sentiero",
                 """
                         Durante il tuo cammino vieni assalito da un piccolo goblin sbavoso!!
-                        
                         """,
                 "Torni indietro solo per infierire sul povero corpo del goblin.",
                 arrayFromArgs("tutorialgoblin"),
@@ -61,9 +61,11 @@ public class RoomTypes {
 
     public ArrayList<String> arrayFromArgs(String... args) {
         ArrayList<String> list = new ArrayList<>();
-        for (String arg : args) {
-            list.add(arg);
-        }
+
+//        for (String arg : args) {
+//            list.add(arg);
+//        }
+        Collections.addAll(list, args); //Equivalente del for sopra
         return list;
     }
 }

@@ -8,10 +8,9 @@ import org.generation.MUD.item.effect.RemoveVitality;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     static void main() throws InterruptedException {
-        GameEngine gameEngine = new GameEngine();
-        gameEngine.stampaAMacchina("Ciao sono una Stringa mi incasino wo", 15);
+//        GameEngine gameEngine = new GameEngine();
+        Utilities.stampaAMacchina("Ciao sono una Stringa mi incasino wdajdhwa bdkawudbawkc merfeyfv sbdwai ascuaidrh bcadweo", 30);
 //        gameEngine.StartGame();
-        int[] array = {1, 2, 3, 4, 5};
     }
 }
 
