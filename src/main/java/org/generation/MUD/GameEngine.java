@@ -15,7 +15,7 @@ public class GameEngine {
                 //System.out.println(sb);
                 for (String ch : sb.toString().split("")) {
                     System.out.print(ch); //Ciao sono una(supera) Stringa
-                    Thread.sleep(50);
+                    Thread.sleep(10);
                 }
                 System.out.println();
                 sb.setLength(0); //Tenendo in considerazione che ha bisogno di un indice per inserire parola
@@ -26,7 +26,7 @@ public class GameEngine {
         }
         for (String ch : sb.toString().split("")){
             System.out.print(ch); //Ciao sono una() Stringa non so cosa() dire ma mi() stop  //in generale non stampa l'ultima
-            Thread.sleep(50);
+            Thread.sleep(10);
         }
     }
 }
