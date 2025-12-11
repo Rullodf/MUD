@@ -9,7 +9,6 @@ public class RoomTypes {
     HashMap<String, Room> roomTypes = new HashMap<>();
 
     public RoomTypes() {
-        HashMap<String, Room> exits = new HashMap<>();
         roomTypes.put("startMenu", new Room(
                 "startMenu",
                 "Menu Principale",
@@ -23,9 +22,9 @@ public class RoomTypes {
                 "pianura1",
                 "Pianura",
                 """
-                        Ti risvegli in una vasta pianura desolata. Ti guardi intorno e non riesci a vedere nient'altro che una distesa \
-                        d'erba...
-                        L'unica cosa che coglie la tua attenzione è un lungo sentiero   
+                        Ti risvegli in una vasta pianura desolata. Ti guardi intorno e non riesci a vedere nient'altro \
+                        che una distesa d'erba...
+                        L'unica cosa che coglie la tua attenzione è un lungo sentiero
                         """,
                 """
                         Fenomeno , sei tornato all' inizio
@@ -41,7 +40,7 @@ public class RoomTypes {
                         Durante il tuo cammino vieni assalito da un piccolo goblin sbavoso!!
                         """,
                 "Torni indietro solo per infierire sul povero corpo del goblin.",
-                arrayFromArgs("tutorialgoblin"),
+                arrayFromArgs("tutorialGoblin"),
                 null,
                 arrayFromArgs("startMenu", "stanzaSceltaClasse", "pianura1", "settings")
         ));
@@ -49,8 +48,8 @@ public class RoomTypes {
                 "stanzaSceltaClasse",
                 "Sentiero",
                 """
-                        Una strana figura ti si para davanti, riesci a malapena ad intravedere i lineamenti del viso per via dell'emorme cappuccio \
-                        malandato
+                        Una strana figura ti si para davanti, riesci a malapena ad intravedere i lineamenti del \
+                        viso per via dell' enorme cappuccio malandato
                         """,
                 "Torni nel luogo dove hai incontrato l'uomo misterioso, ma non lo trovi più...",
                 arrayFromArgs("riccardoInIncognito"),
