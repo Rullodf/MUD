@@ -8,7 +8,7 @@ public class Utilities {
         try{
             StringBuilder sb= new StringBuilder();
             for (String word : text.split(" ") ){
-                if (sb.length() >= lengthMax) {
+                if (sb.length() + word.length() >= lengthMax) {
                     //System.out.println(sb);
                     for (String ch : sb.toString().split("")) {
                         System.out.print(ch); //Ciao sono una(supera) Stringa
