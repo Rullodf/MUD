@@ -21,11 +21,12 @@ public class GameEngine {
     }
 
     public void startGame() {
-        currentRoom = roomTypes.roomsMap.get("startMenu");
+        Utilities.setLengthMax(30);
         String comando;
+        currentRoom = roomTypes.roomsMap.get("pianura1");
+        changeRoom("menù-iniziale");
 
         while (true){
-            IO.println(currentRoom.getExits());
             comando = IO.readln();
             executeCommand(comando);
         }
@@ -48,11 +49,17 @@ public class GameEngine {
             }
             case RoomActions.EXPLORE -> {
             }
+            case RoomActions.PRINT_EXITS -> {
+                if (azione.length != 1) {
+                    return false;
+                }
+                Utilities.stampaAMacchina(currentRoom.getExits().keySet().toString());
+            }
             case RoomActions.CHANGE_ROOM -> {
                 if (azione.length != 2) {
                     return false;
                 }
-                if (!currentRoom.getExits().contains(azione[1])) {
+                if (!currentRoom.getExits().containsKey(azione[1])) {
                     return false;
                 }
 
@@ -68,9 +75,10 @@ public class GameEngine {
 
 
 
-    public void changeRoom(String idStanza) {
+    public void changeRoom(String nomeUscita) {
+        IO.println("\033[2J\033[H");
+        String idStanza = currentRoom.getExits().get(nomeUscita);
         currentRoom = roomTypes.roomsMap.get(idStanza);
         currentRoom.enteredRoom(player);
-
     }
 }

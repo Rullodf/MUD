@@ -16,10 +16,10 @@ public class Room {
     String comebackText;
     ArrayList<String> npcs;                     //lista degli NPC presenti nella stanza
     ArrayList<String> enemies;                 //lista dei nemici presenti nella stanza
-    ArrayList<String> items;                    //lista degli oggetti presenti nella stanza
-    ArrayList<String> exits;                    //lista delle Room a cui questa Room è collegata
+    ArrayList<String> items;                 //lista dei nemici presenti nella stanza
+    HashMap<String, String> exits;              //chiave: nome temporaneo dell'uscita, valore: ID della stanza collegata all'uscita
 
-    public Room(String id, String name, String welcomeText, String comebackText, ArrayList<String> npcs, ArrayList<String> items, ArrayList<String> exits) {
+    public Room(String id, String name, String welcomeText, String comebackText, ArrayList<String> npcs, ArrayList<String> items, HashMap<String, String> exits) {
         this.id = id;
         this.welcomeText = welcomeText;
         this.comebackText = comebackText;
@@ -27,16 +27,16 @@ public class Room {
         this.npcs = npcs;
         this.items = items;
         this.exits = exits;
-        if (!id.equals("startMenu")){
-            this.exits.add("startMenu");
+        if (!id.equals("startMenu")) {
+            this.exits.put("menù-iniziale", "startMenu");
         }
-        if (id.equals("settings")){
-            this.exits.add("settings");
+        if (id.equals("settings")) {
+            this.exits.put("impostazioni", "settings");
         }
     }
 
     public void enteredRoom(Player player) {
-        Utilities.stampaAMacchina(welcomeText, 30);
+        Utilities.stampaAMacchina(welcomeText);
     }
 
     public String getId() {
@@ -67,7 +67,7 @@ public class Room {
         return enemies;
     }
 
-    public ArrayList<String> getExits() {
+    public HashMap<String, String> getExits() {
         return exits;
     }
 }

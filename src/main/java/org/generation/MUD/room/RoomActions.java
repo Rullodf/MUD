@@ -7,7 +7,8 @@ public enum RoomActions {
     COLLECT("pick"),
     USE_ITEM("use"),
     EXPLORE("search"),
-    CHANGE_ROOM("goto");
+    CHANGE_ROOM("goto"),
+    PRINT_EXITS("exits");
 
     String comando;
 

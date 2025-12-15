@@ -16,7 +16,7 @@ public class RoomTypes {
                 "GIOCO SCHIFOMADO",
                 null,
                 null,
-                arrayFromArgs("pianura1")
+                MapFromArgs("pianura", "pianura1")
         ));
         roomsMap.put("pianura1", new Room(
                 "pianura1",
@@ -31,7 +31,7 @@ public class RoomTypes {
                         """,
                 null,
                 null,
-                arrayFromArgs("tutorial")
+                MapFromArgs("sentiero", "tutorial")
         ));
         roomsMap.put("tutorial", new Room(
                 "tutorial",
@@ -42,7 +42,8 @@ public class RoomTypes {
                 "Torni indietro solo per infierire sul povero corpo del goblin.",
                 arrayFromArgs("tutorialGoblin"),
                 null,
-                arrayFromArgs("stanzaSceltaClasse", "pianura1")
+                MapFromArgs("avanti", "stanzaSceltaClasse",
+                        "indietro", "pianura1")
         ));
         roomsMap.put("stanzaSceltaClasse", new Room(
                 "stanzaSceltaClasse",
@@ -54,7 +55,7 @@ public class RoomTypes {
                 "Torni nel luogo dove hai incontrato l'uomo misterioso, ma non lo trovi più...",
                 arrayFromArgs("riccardoInIncognito"),
                 null,
-                arrayFromArgs("tutorial")
+                MapFromArgs("indietro", "tutorial")
         ));
     }
 
@@ -66,5 +67,21 @@ public class RoomTypes {
 //        }
         Collections.addAll(list, args); //Equivalente del for sopra
         return list;
+    }
+
+    /**
+     * Crea una mappa da argomenti passati come coppie di chiave-valore
+     *
+     * @param args
+     * @return
+     */
+    public HashMap<String, String> MapFromArgs(String... args) {
+        HashMap<String, String> map = new HashMap<>();
+
+        for (int i = 0; i < args.length; i += 2) {
+            map.put(args[i], args[i + 1]);
+        }
+
+        return map;
     }
 }
