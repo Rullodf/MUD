@@ -6,10 +6,10 @@ import java.util.HashMap;
 
 //creiamo la hashmap da usare in ogni parte del gioco
 public class RoomTypes {
-    HashMap<String, Room> roomTypes = new HashMap<>();
+    public HashMap<String, Room> roomsMap = new HashMap<>();
 
     public RoomTypes() {
-        roomTypes.put("startMenu", new Room(
+        roomsMap.put("startMenu", new Room(
                 "startMenu",
                 "Menu Principale",
                 "GIOCO SCHIFOMADO'",
@@ -18,7 +18,7 @@ public class RoomTypes {
                 null,
                 arrayFromArgs("pianura1", "settings")
         ));
-        roomTypes.put("pianura", new Room(
+        roomsMap.put("pianura", new Room(
                 "pianura1",
                 "Pianura",
                 """
@@ -33,7 +33,7 @@ public class RoomTypes {
                 null,
                 arrayFromArgs("startMenu", "settings", "tutorial")
         ));
-        roomTypes.put("tutorial", new Room(
+        roomsMap.put("tutorial", new Room(
                 "tutorial",
                 "Sentiero",
                 """
@@ -44,7 +44,7 @@ public class RoomTypes {
                 null,
                 arrayFromArgs("startMenu", "stanzaSceltaClasse", "pianura1", "settings")
         ));
-        roomTypes.put("stanzaSceltaClasse", new Room(
+        roomsMap.put("stanzaSceltaClasse", new Room(
                 "stanzaSceltaClasse",
                 "Sentiero",
                 """

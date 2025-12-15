@@ -1,6 +1,7 @@
 package org.generation.MUD.room;
 
 import org.generation.MUD.Player;
+import org.generation.MUD.Utilities;
 import org.generation.MUD.item.Item;
 import org.generation.MUD.npc.Enemy;
 import org.generation.MUD.npc.NPC;
@@ -31,8 +32,8 @@ public class Room {
         this.exits.add("exit");
     }
 
-    void enteredRoom(Player player) {
-        System.out.println(welcomeText);
+    public void enteredRoom(Player player) {
+        Utilities.stampaAMacchina(welcomeText, 30);
     }
 
     public String getId() {

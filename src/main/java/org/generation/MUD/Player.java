@@ -23,6 +23,15 @@ public class Player {
         this.gold = gold ;
     }
 
+    public Player(){
+        this.name = "";
+        this.gender = "";
+        this.classStats = null;
+        this.inventory = null;
+        this.playerStats = null;
+        this.gold = 0 ;
+    }
+
     public void takeHit(int damage){
         playerStats.setVitality(playerStats.getVitality() - damage);
     }
