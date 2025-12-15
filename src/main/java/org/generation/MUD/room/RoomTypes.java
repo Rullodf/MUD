@@ -61,10 +61,10 @@ public class RoomTypes {
     public ArrayList<String> arrayFromArgs(String... args) {
         ArrayList<String> list = new ArrayList<>();
 
-//        for (String arg : args) {
-//            list.add(arg);
-//        }
-        Collections.addAll(list, args); //Equivalente del for sopra
+        for (String arg : args) {
+            list.add(arg);
+        }
+//        Collections.addAll(list, args); //Equivalente del for sopra
         return list;
     }
 }

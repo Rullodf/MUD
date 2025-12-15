@@ -14,4 +14,12 @@ public enum RoomActions {
     RoomActions(String comando){
         this.comando = comando;
     }
+    public static RoomActions fromString(String text){
+        for (RoomActions value : RoomActions.values()){
+            if (value.comando.equals(text)){
+                return value;
+            }
+        }
+        return null;
+    }
 }

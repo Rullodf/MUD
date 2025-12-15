@@ -40,6 +40,11 @@ public class GameEngine {
         }
     }
 
-    public void startGame() {
+
+
+    public void changeRoom(String idStanza) {
+        currentRoom = roomTypes.roomsMap.get(idStanza);
+        currentRoom.enteredRoom(player);
+
     }
 }
