@@ -20,7 +20,6 @@ public class Room {
     ArrayList<String> exits;                    //lista delle Room a cui questa Room è collegata
 
     public Room(String id, String name, String welcomeText, String comebackText, ArrayList<String> npcs, ArrayList<String> items, ArrayList<String> exits) {
-        RoomTypes roomTypes = new RoomTypes();
         this.id = id;
         this.welcomeText = welcomeText;
         this.comebackText = comebackText;
@@ -28,8 +27,12 @@ public class Room {
         this.npcs = npcs;
         this.items = items;
         this.exits = exits;
-        this.exits.add("settings");
-        this.exits.add("exit");
+        if (!id.equals("startMenu")){
+            this.exits.add("startMenu");
+        }
+        if (id.equals("settings")){
+            this.exits.add("settings");
+        }
     }
 
     public void enteredRoom(Player player) {

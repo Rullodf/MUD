@@ -16,9 +16,9 @@ public class RoomTypes {
                 "GIOCO SCHIFOMADO",
                 null,
                 null,
-                arrayFromArgs("pianura1", "settings")
+                arrayFromArgs("pianura1")
         ));
-        roomsMap.put("pianura", new Room(
+        roomsMap.put("pianura1", new Room(
                 "pianura1",
                 "Pianura",
                 """
@@ -31,7 +31,7 @@ public class RoomTypes {
                         """,
                 null,
                 null,
-                arrayFromArgs("startMenu", "settings", "tutorial")
+                arrayFromArgs("tutorial")
         ));
         roomsMap.put("tutorial", new Room(
                 "tutorial",
@@ -42,7 +42,7 @@ public class RoomTypes {
                 "Torni indietro solo per infierire sul povero corpo del goblin.",
                 arrayFromArgs("tutorialGoblin"),
                 null,
-                arrayFromArgs("startMenu", "stanzaSceltaClasse", "pianura1", "settings")
+                arrayFromArgs("stanzaSceltaClasse", "pianura1")
         ));
         roomsMap.put("stanzaSceltaClasse", new Room(
                 "stanzaSceltaClasse",
@@ -54,17 +54,17 @@ public class RoomTypes {
                 "Torni nel luogo dove hai incontrato l'uomo misterioso, ma non lo trovi più...",
                 arrayFromArgs("riccardoInIncognito"),
                 null,
-                arrayFromArgs("startMenu", "tutorial", "settings")
+                arrayFromArgs("tutorial")
         ));
     }
 
     public ArrayList<String> arrayFromArgs(String... args) {
         ArrayList<String> list = new ArrayList<>();
 
-        for (String arg : args) {
-            list.add(arg);
-        }
-//        Collections.addAll(list, args); //Equivalente del for sopra
+//        for (String arg : args) {
+//            list.add(arg);
+//        }
+        Collections.addAll(list, args); //Equivalente del for sopra
         return list;
     }
 }
