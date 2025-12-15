@@ -15,6 +15,10 @@ public enum RoomActions {
     RoomActions(String comando){
         this.comando = comando;
     }
+
+    /*
+    funzione che verrà richiamata per prendere il valore dell'enum
+     */
     public static RoomActions fromString(String text){
         for (RoomActions value : RoomActions.values()){
             if (value.comando.equals(text)){

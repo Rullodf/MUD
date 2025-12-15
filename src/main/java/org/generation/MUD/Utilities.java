@@ -3,7 +3,9 @@ package org.generation.MUD;
 public class Utilities {
 
     static int lengthMax = 100;
-
+    /*
+        Funzione che stampa a macchina la descrizione della stanza al momento dell'entrata
+    */
     public static void stampaAMacchina(String text, int lengthMax){
         try{
             StringBuilder sb= new StringBuilder();
@@ -41,11 +43,16 @@ public class Utilities {
         }
 
     }
-
+    /*
+        Funzione che stampa a macchina la descrizione della stanza al momento dell'entrata con limitazione massima per le
+        parole per riga
+    */
     public static void stampaAMacchina(String text){
         stampaAMacchina(text, lengthMax);
     }
-
+    /*
+        Funzione che setta il limite massimo di lunghezza della singola riga
+    */
     public static void setLengthMax(int lengthMax){
         Utilities.lengthMax = lengthMax;
     }
