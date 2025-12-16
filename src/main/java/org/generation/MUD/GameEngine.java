@@ -53,6 +53,10 @@ public class GameEngine {
             case RoomActions.USE_ITEM -> {
             }
             case RoomActions.EXPLORE -> {
+                if (azione.length != 1) {
+                    return false;
+                }
+
             }
             case RoomActions.PRINT_EXITS -> {
                 if (azione.length != 1) {

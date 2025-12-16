@@ -11,12 +11,18 @@ public class Utilities {
                 if (sb.length() + word.length() >= lengthMax) {
                     stampaEReinizializza(sb);
                 }
-                if(word.contains("\n")){
-                    String[] check = word.split("\n");
+                while(word.contains("\n")){
+                    String[] check = word.split("\n",1);
                     sb.append(check[0]);
                     stampaEReinizializza(sb);
                     //se metto (0) è come se lo azzerassi; oppure New String Builder
-                    word = check.length > 1 ? check[1] : "";
+
+                    //word = check.length > 1 ? check[1] : "";
+
+                    if(check.length > 1)
+                        word = check[1];
+                    else
+                        word = "";
                 }
                 sb.append(word);
                 sb.append(" ");
