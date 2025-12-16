@@ -54,7 +54,7 @@ public class Inventory {
                 Armi: %s
                 Consumabili: %s
                 Oggetti chiave: %s
-                """.formatted( inventory.get("armor").toString(),
+                """.formatted(inventory.get("armor").toString(),
                 inventory.get("weapon").toString(),
                 inventory.get("consumable").toString(),
                 inventory.get("keyitem").toString());

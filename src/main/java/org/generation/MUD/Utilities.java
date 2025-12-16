@@ -9,25 +9,14 @@ public class Utilities {
             StringBuilder sb= new StringBuilder();
             for (String word : text.split(" ") ){
                 if (sb.length() + word.length() >= lengthMax) {
-                    //System.out.println(sb);
-                    for (String ch : sb.toString().split("")) {
-                        System.out.print(ch); //Ciao sono una(supera) Stringa
-                        Thread.sleep(10);
-                    }
-                    System.out.println();
-                    sb.setLength(0); //Tenendo in considerazione che ha bisogno di un indice per inserire parola
-                    //se metto (0) è come se lo azzerassi; oppure New String Builder
+                    stampaEReinizializza(sb);
                 }
                 if(word.contains("\n")){
-                    sb.append(word.split("\n")[0]);
-                    for (String ch : sb.toString().split("")) {
-                        System.out.print(ch); //Ciao sono una(supera) Stringa
-                        Thread.sleep(10);
-                    }
-                    System.out.println();
-                    sb.setLength(0); //Tenendo in considerazione che ha bisogno di un indice per inserire parola
+                    String[] check = word.split("\n");
+                    sb.append(check[0]);
+                    stampaEReinizializza(sb);
                     //se metto (0) è come se lo azzerassi; oppure New String Builder
-                    word = word.split("\n")[1];
+                    word = check.length > 1 ? check[1] : "";
                 }
                 sb.append(word);
                 sb.append(" ");
@@ -37,9 +26,21 @@ public class Utilities {
                 Thread.sleep(10);
             }
             System.out.println();
-        } catch (Exception _) {
+        } catch (Exception e) {
+            IO.println( "Errore: " + e.getMessage());
         }
 
+    }
+
+    private static void stampaEReinizializza(StringBuilder sb) throws InterruptedException {
+        //System.out.println(sb);
+        for (String ch : sb.toString().split("")) {
+            System.out.print(ch); //Ciao sono una(supera) Stringa
+            Thread.sleep(10);
+        }
+        System.out.println();
+        sb.setLength(0); //Tenendo in considerazione che ha bisogno di un indice per inserire parola
+        //se metto (0) è come se lo azzerassi; oppure New String Builder
     }
 
     public static void stampaAMacchina(String text){

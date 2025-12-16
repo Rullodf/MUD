@@ -27,7 +27,7 @@ public class GameEngine {
         changeRoom("menù-iniziale");
 
         while (true){
-            comando = IO.readln();
+            comando = IO.readln("> ");
             executeCommand(comando);
         }
     }
