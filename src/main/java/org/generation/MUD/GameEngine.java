@@ -12,14 +12,15 @@ import java.lang.reflect.Array;
 
 public class GameEngine {
 
-    Room currentRoom;
-    RoomTypes roomTypes = new RoomTypes();
+    Room currentRoom;   //oggetto che si riferisce alla stanza attuale in cui si trova il player
+    RoomTypes roomTypes = new RoomTypes();  //oggetto che contiene le stanze del MUD
     Player player;
 
     public GameEngine() {
         player = new Player();
-    }
+    }   //costruttore che inizializza il player
 
+    //la main principale!
     public void startGame() {
         Utilities.setLengthMax(30);
         String comando;
@@ -32,6 +33,10 @@ public class GameEngine {
         }
     }
 
+    /*
+    funzione che prende come input il "comando(enum)+stanza(descrizione)" scritta da terminale dall'utente, e tramite lo
+    switch, fa corrispondere ad un determinato enum un'azione
+     */
     public boolean executeCommand(String command) {
         // "comando parametro1 parametro2 ... parametroN" -> ["comando", "parametro1", "parametro2", ..., "parametroN"]}
         // "goto idStanza" -> ["goto", "idStanza"]
@@ -72,11 +77,11 @@ public class GameEngine {
         }
         return false;
     }
-
-
-
+    /*
+    funzione che serve per cambiare stanza. il parametro è la stanza passata dalla funzione 'executeCommmand'
+     */
     public void changeRoom(String nomeUscita) {
-        IO.println("\033[2J\033[H");
+        IO.println("\033[2J\033[H"); //questo print è per fare il clear del terminale \033[2J e riportare il cursore in cima \033[H
         String idStanza = currentRoom.getExits().get(nomeUscita);
         currentRoom = roomTypes.roomsMap.get(idStanza);
         currentRoom.enteredRoom(player);
