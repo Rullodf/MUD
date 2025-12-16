@@ -27,7 +27,7 @@ public class GameEngine {
         currentRoom = roomTypes.roomsMap.get("pianura1");
         changeRoom("menù-iniziale");
 
-        while (true){
+        while (true) {
             comando = IO.readln("> ");
             executeCommand(comando);
         }
@@ -44,19 +44,35 @@ public class GameEngine {
         RoomActions azioneEnum = RoomActions.fromString(azione[0]);
         switch (azioneEnum) {
             case RoomActions.ATTACK -> {
+                if (azione.length != 2) {
+                    return false;
+                }
             }
             case RoomActions.TALK -> {
-
+                if (azione.length != 2) {
+                    return false;
+                }
             }
             case RoomActions.COLLECT -> {
+                if (azione.length != 2) {
+                    return false;
+                }
             }
             case RoomActions.USE_ITEM -> {
+                if (azione.length != 2) {
+                    return false;
+                }
             }
             case RoomActions.EXPLORE -> {
                 if (azione.length != 1) {
                     return false;
                 }
-
+                Utilities.stampaAMacchina(currentRoom.getExploreText());
+            }
+            case RoomActions.INTERACT -> {
+                if (azione.length != 2) {
+                    return false;
+                }
             }
             case RoomActions.PRINT_EXITS -> {
                 if (azione.length != 1) {
@@ -81,6 +97,7 @@ public class GameEngine {
         }
         return false;
     }
+
     /*
     funzione che serve per cambiare stanza. il parametro è la stanza passata dalla funzione 'executeCommmand'
      */

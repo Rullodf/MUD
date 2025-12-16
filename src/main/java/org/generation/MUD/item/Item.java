@@ -2,10 +2,11 @@ package org.generation.MUD.item;
 
 import org.generation.MUD.Player;
 
-public class Item {
+public abstract class Item {
     protected String name, description;
     protected double weight;
     protected int price;
+    protected String category;
 
     public Item(String name, double weight, String description, int price) {
         this.name = name;
@@ -44,6 +45,13 @@ public class Item {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    @Override
+    public boolean equals(Object i) {
+        if(i == null) return false;
+        if(!(i instanceof Item)) return false;
+        return this.description.equals(((Item) i).description) && this.name.equals(((Item) i).name);
     }
 
 }

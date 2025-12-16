@@ -59,4 +59,16 @@ public class Inventory {
                 inventory.get("consumable").toString(),
                 inventory.get("keyitem").toString());
     }
+
+    public ArrayList<Item> getCategoryList( String category){
+        return inventory.get(category);
+    }
+
+    public int getActualWeight() {
+        return actualWeight;
+    }
+
+    public int getMaxWeight() {
+        return maxWeight;
+    }
 }

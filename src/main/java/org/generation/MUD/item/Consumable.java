@@ -17,6 +17,7 @@ public class Consumable extends Item {
         super(name, weight, description, price);
         this.quantity = quantity;
         this.effects = new ArrayList<>();
+        this.category = "consumable";
         for (Effect effect : effects) {
             this.effects.add(effect);
         }

@@ -14,6 +14,7 @@ public class RoomTypes {
                 "Menu Principale",
                 "GIOCO SCHIFOMADO'",
                 "GIOCO SCHIFOMADO",
+                "",
                 null,
                 null,
                 MapFromArgs("pianura", "pianura1")
@@ -29,6 +30,7 @@ public class RoomTypes {
                 """
                         Fenomeno , sei tornato all' inizio
                         """,
+                "",
                 null,
                 null,
                 MapFromArgs("sentiero", "tutorial")
@@ -40,6 +42,7 @@ public class RoomTypes {
                         Durante il tuo cammino vieni assalito da un piccolo goblin sbavoso!!
                         """,
                 "Torni indietro solo per infierire sul povero corpo del goblin.",
+                "",
                 arrayFromArgs("tutorialGoblin"),
                 null,
                 MapFromArgs("avanti", "stanzaSceltaClasse",
@@ -53,6 +56,7 @@ public class RoomTypes {
                         viso per via dell' enorme cappuccio malandato
                         """,
                 "Torni nel luogo dove hai incontrato l'uomo misterioso, ma non lo trovi più...",
+                "",
                 arrayFromArgs("riccardoInIncognito"),
                 null,
                 MapFromArgs("indietro", "tutorial")

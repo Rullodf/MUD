@@ -9,6 +9,7 @@ public class Weapon extends Item{
 
     public Weapon(String name, double weight, String description, int price, int damagePhysical, int damageMagical) {
         super(name, weight, description, price);
+        this.category = "weapon";
         this.damagePhysical = damagePhysical;
         this.damageMagical = damageMagical;
     }

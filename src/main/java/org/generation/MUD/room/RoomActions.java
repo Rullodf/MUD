@@ -5,12 +5,13 @@ public enum RoomActions {
     ATTACK("att"),
     TALK("talk"),
     COLLECT("pick"),
+    INTERACT("interact"),
     USE_ITEM("use"),
     EXPLORE("search"),
     CHANGE_ROOM("goto"),
     PRINT_EXITS("exits");
 
-    String comando;
+    final String comando;
 
     RoomActions(String comando){
         this.comando = comando;

@@ -14,15 +14,17 @@ public class Room {
     String name;                                //nome della stanza (id, ma più bello da vedere
     String welcomeText;                         //messaggio di entrata nella stanza
     String comebackText;
+    String exploreText;
     ArrayList<String> npcs;                     //lista degli NPC presenti nella stanza
     ArrayList<String> enemies;                 //lista dei nemici presenti nella stanza
     ArrayList<String> items;                 //lista dei nemici presenti nella stanza
     HashMap<String, String> exits;              //chiave: nome temporaneo dell'uscita, valore: ID della stanza collegata all'uscita
 
-    public Room(String id, String name, String welcomeText, String comebackText, ArrayList<String> npcs, ArrayList<String> items, HashMap<String, String> exits) {
+    public Room(String id, String name, String welcomeText, String comebackText, String exploreText, ArrayList<String> npcs, ArrayList<String> items, HashMap<String, String> exits) {
         this.id = id;
         this.welcomeText = welcomeText;
         this.comebackText = comebackText;
+        this.exploreText = exploreText;
         this.name = name;
         this.npcs = npcs;
         this.items = items;
@@ -54,6 +56,8 @@ public class Room {
     public String getComebackText() {
         return comebackText;
     }
+
+    public String getExploreText() {return exploreText;}
 
     public ArrayList<String> getNpcs() {
         return npcs;
