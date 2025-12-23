@@ -1,12 +1,14 @@
 package org.generation.MUD.item;
 
+import org.generation.MUD.Inventory.ItemCategory;
 import org.generation.MUD.Player;
 
 public abstract class Item {
     protected String name, description;
     protected double weight;
     protected int price;
-    protected String category;
+    public abstract ItemCategory getCategory();
+
 
     public Item(String name, double weight, String description, int price) {
         this.name = name;
@@ -46,6 +48,7 @@ public abstract class Item {
     public void setPrice(int price) {
         this.price = price;
     }
+
 
     @Override
     public boolean equals(Object i) {

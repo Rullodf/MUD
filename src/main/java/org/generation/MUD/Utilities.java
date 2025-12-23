@@ -1,5 +1,8 @@
 package org.generation.MUD;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 public class Utilities {
 
     static int lengthMax = 100;
@@ -55,5 +58,20 @@ public class Utilities {
 
     public static void setLengthMax(int lengthMax){
         Utilities.lengthMax = lengthMax;
+    }
+
+    /*
+        <T>: tipo generico per rendere dinamica la funzione in modo che possa accettare qualsiasi tipo di parametro
+
+     */
+    @SafeVarargs
+    public static <T> ArrayList<T> listFromArgs(T... args) {
+        ArrayList<T> list = new ArrayList<>();
+
+//        for (String arg : args) {
+//            list.add(arg);
+//        }
+        Collections.addAll(list, args); //Equivalente del for sopra
+        return list;
     }
 }

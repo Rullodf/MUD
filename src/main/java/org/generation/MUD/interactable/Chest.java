@@ -1,6 +1,6 @@
 package org.generation.MUD.interactable;
 
-import org.generation.MUD.Inventory;
+import org.generation.MUD.Inventory.ItemCategory;
 import org.generation.MUD.Player;
 import org.generation.MUD.item.Item;
 import org.generation.MUD.item.KeyItem;
@@ -10,19 +10,19 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class Chest implements Interactable {
-    boolean islocked;
+    boolean isLocked;
     KeyItem keyItem;
     ArrayList<Item> loot;
 
     public Chest(KeyItem keyItem, Item... items) {
-        this.islocked = true;
+        this.isLocked = true;
         this.keyItem = keyItem;
         loot = new ArrayList<>();
         Collections.addAll(loot, items);
     }
 
     public Chest(Item... items) {
-        this.islocked = false;
+        this.isLocked = false;
         this.keyItem = null;
     }
 
@@ -30,7 +30,7 @@ public class Chest implements Interactable {
         if (islocked) {
             if (player.getInventory().getCategoryList("keyitem").contains(keyItem)) {
                 System.out.println("Il baule si è aperto!");
-                islocked = false;
+                isLocked = false;
             } else {
                 IO.println("Non hai la chiave per aprire questo baule.");
                 return;

@@ -1,6 +1,6 @@
 package org.generation.MUD.npc;
 
-import org.generation.MUD.Inventory;
+import org.generation.MUD.Inventory.Inventory;
 import org.generation.MUD.Stats;
 import org.generation.MUD.item.Armor;
 import org.generation.MUD.item.Weapon;

@@ -1,5 +1,7 @@
 package org.generation.MUD;
 
+import org.generation.MUD.Inventory.Inventory;
+
 /*
     LA CLASSE -> PLAYER <- CONTIENE LE CARATTERISTICHE DEL PLAYER!!!
  */

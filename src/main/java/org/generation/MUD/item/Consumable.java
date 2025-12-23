@@ -1,5 +1,6 @@
 package org.generation.MUD.item;
 
+import org.generation.MUD.Inventory.ItemCategory;
 import org.generation.MUD.Player;
 import org.generation.MUD.item.effect.AddMP;
 import org.generation.MUD.item.effect.Effect;
@@ -17,13 +18,14 @@ public class Consumable extends Item {
         super(name, weight, description, price);
         this.quantity = quantity;
         this.effects = new ArrayList<>();
-        this.category = "consumable";
-        for (Effect effect : effects) {
-            this.effects.add(effect);
-        }
-
+        this.effects.addAll(Arrays.asList(effects));
         this.effects.add(new RemoveVitality(10));
         this.effects.add(new AddMP(10));
+    }
+
+    @Override
+    public ItemCategory getCategory() {
+        return ItemCategory.CONSUMABLE;
     }
 
     public int getQuantity() {

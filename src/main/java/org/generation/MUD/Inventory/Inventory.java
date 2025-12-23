@@ -1,20 +1,21 @@
-package org.generation.MUD;
+package org.generation.MUD.Inventory;
 
 import org.generation.MUD.item.*;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Inventory {
-    protected HashMap<String, ArrayList<Item>> inventory = new HashMap<>();
+    protected HashMap<ItemCategory, ArrayList<Item>> inventory = new HashMap<>();
     protected final int maxWeight = 50;
     protected int actualWeight;
 
     public Inventory() {
-        inventory.put("armor", new ArrayList<>());
-        inventory.put("weapon", new ArrayList<>());
-        inventory.put("keyitem", new ArrayList<>());
-        inventory.put("consumable", new ArrayList<>());
+        inventory.put(ItemCategory.ARMOR, new ArrayList<>());
+        inventory.put(ItemCategory.WEAPON, new ArrayList<>());
+        inventory.put(ItemCategory.KEYITEM, new ArrayList<>());
+        inventory.put(ItemCategory.CONSUMABLE, new ArrayList<>());
     }
 
     public boolean addItem(Item toInsert) {
@@ -22,23 +23,19 @@ public class Inventory {
             return false;
         }
         switch (toInsert) {
-            case Armor a -> {
-                inventory.get("armor").add(a);
-            }
-            case Weapon w -> {
-                inventory.get("weapon").add(w);
-            }
-            case Consumable c -> {
-                inventory.get("consumable").add(c);
-            }
-            case KeyItem k -> {
-                inventory.get("keyitem").add(k);
-            }
+            case Armor a -> inventory.get(ItemCategory.ARMOR).add(a);
+            case Weapon w -> inventory.get(ItemCategory.WEAPON).add(w);
+            case Consumable c -> inventory.get(ItemCategory.CONSUMABLE).add(c);
+            case KeyItem k -> inventory.get(ItemCategory.KEYITEM).add(k);
             default -> {
                 return false;
             }
         }
         return true;
+    }
+
+    public void removeItem(@NotNull Item toRemove) {
+            inventory.get(toRemove.getCategory()).remove(toRemove);
     }
 
     @Override
@@ -60,7 +57,7 @@ public class Inventory {
                 inventory.get("keyitem").toString());
     }
 
-    public ArrayList<Item> getCategoryList( String category){
+    public ArrayList<Item> getCategoryList(ItemCategory category) {
         return inventory.get(category);
     }
 
