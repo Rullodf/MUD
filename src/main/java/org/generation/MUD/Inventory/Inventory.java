@@ -40,7 +40,7 @@ public class Inventory {
 
     @Override
     public String toString() {
-//        String.format("feafaf", parametri);     stessa cosa di
+//        String.format("feafaf", parametri);stessa cosa di
 //        "dafeafl".formatted(parametri)
         //mattia sei un grande <3
         //la stella più luminosa
@@ -51,10 +51,10 @@ public class Inventory {
                 Armi: %s
                 Consumabili: %s
                 Oggetti chiave: %s
-                """.formatted(inventory.get("armor").toString(),
-                inventory.get("weapon").toString(),
-                inventory.get("consumable").toString(),
-                inventory.get("keyitem").toString());
+                """.formatted(inventory.get(ItemCategory.ARMOR).toString(),
+                inventory.get(ItemCategory.WEAPON).toString(),
+                inventory.get(ItemCategory.CONSUMABLE).toString(),
+                inventory.get(ItemCategory.KEYITEM).toString());
     }
 
     public ArrayList<Item> getCategoryList(ItemCategory category) {

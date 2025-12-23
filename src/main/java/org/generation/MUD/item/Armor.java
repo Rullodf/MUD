@@ -14,4 +14,8 @@ public class Armor extends Item{
         this.physicalDefense = physicalDefense;
     }
 
+    @Override
+    public ItemCategory getCategory() {
+        return ItemCategory.ARMOR;
+    }
 }

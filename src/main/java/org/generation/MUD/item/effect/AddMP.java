@@ -11,8 +11,4 @@ public class AddMP implements Effect {
     public void applyEffect(Player player) {
         player.getPlayerStats().setMp(player.getPlayerStats().getMp() + value);
     }
-
-    public void printSuca(){
-        printSuca();
-    }
 }

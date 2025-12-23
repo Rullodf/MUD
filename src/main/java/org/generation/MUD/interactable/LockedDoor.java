@@ -1,5 +1,6 @@
 package org.generation.MUD.interactable;
 
+import org.generation.MUD.Inventory.ItemCategory;
 import org.generation.MUD.Player;
 import org.generation.MUD.item.KeyItem;
 import org.generation.MUD.room.Room;
@@ -20,7 +21,7 @@ public class LockedDoor implements Interactable {
 
     @Override
     public void interact(Player player, Room currentRoom) {
-        if (player.getInventory().getCategoryList("keyitem").contains(keyItem)) {
+        if (player.getInventory().getCategoryList(ItemCategory.KEYITEM).contains(keyItem)) {
             isLocked = false;
             currentRoom.getExits().put(connectedRoomName, connectedRoomID);
             IO.println("La porta è stata aperta! Hai accesso ad un nuovo percorso.");

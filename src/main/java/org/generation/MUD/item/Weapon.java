@@ -14,4 +14,8 @@ public class Weapon extends Item{
         this.damagePhysical = damagePhysical;
         this.damageMagical = damageMagical;
     }
+    @Override
+    public ItemCategory getCategory() {
+        return ItemCategory.WEAPON;
+    }
 }

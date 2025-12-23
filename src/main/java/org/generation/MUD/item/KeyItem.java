@@ -7,4 +7,8 @@ public class KeyItem  extends Item{
     public KeyItem(String name, double weight, String description, int price) {
         super(name, weight, description, price);
     }
+    @Override
+    public ItemCategory getCategory() {
+        return ItemCategory.KEYITEM;
+    }
 }

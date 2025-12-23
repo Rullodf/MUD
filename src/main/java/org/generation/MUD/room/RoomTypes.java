@@ -1,5 +1,9 @@
 package org.generation.MUD.room;
 
+import org.generation.MUD.Utilities;
+import org.generation.MUD.npc.NPC;
+import org.generation.MUD.npc.NPCTypes;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -59,7 +63,15 @@ public class RoomTypes {
                 "",
                 arrayFromArgs("riccardoInIncognito"),
                 null,
-                MapFromArgs("indietro", "tutorial")
+                MapFromArgs("indietro", "tutorial"),
+                player -> {
+                   NPCTypes a = new NPCTypes();
+                   NPC T_T =  a.npcsMap.get("riccardoTutorial");
+                    Utilities.stampaAMacchina(T_T.toString());
+                    //dialogo col bro
+                    //input dall'utente per scegliere la classe
+                    //riassegnazione delle stats e aggiornamento inventario
+                }
         ));
     }
 

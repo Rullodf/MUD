@@ -27,8 +27,8 @@ public class Chest implements Interactable {
     }
 
     public void interact(Player player, Room currentRoom) {
-        if (islocked) {
-            if (player.getInventory().getCategoryList("keyitem").contains(keyItem)) {
+        if (isLocked) {
+            if (player.getInventory().getCategoryList(ItemCategory.KEYITEM).contains(keyItem)) {
                 System.out.println("Il baule si è aperto!");
                 isLocked = false;
             } else {
