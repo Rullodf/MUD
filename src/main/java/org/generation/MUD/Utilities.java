@@ -2,6 +2,7 @@ package org.generation.MUD;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 public class Utilities {
 
@@ -15,7 +16,7 @@ public class Utilities {
                     stampaEReinizializza(sb);
                 }
                 while(word.contains("\n")){
-                    String[] check = word.split("\n",1);
+                    String[] check = word.split("\n",2);
                     sb.append(check[0]);
                     stampaEReinizializza(sb);
                     //se metto (0) è come se lo azzerassi; oppure New String Builder
@@ -56,6 +57,15 @@ public class Utilities {
         stampaAMacchina(text, lengthMax);
     }
 
+    public static void stampaDialogoAMacchina(List<String> text){
+        IO.println("\033[H\033[2J");
+        for (String line : text) {
+            stampaAMacchina("\""+ line + "\"", lengthMax - 2);
+            IO.readln("");
+            IO.println("\033[H\033[2J");
+        }
+    }
+
     public static void setLengthMax(int lengthMax){
         Utilities.lengthMax = lengthMax;
     }
@@ -65,7 +75,7 @@ public class Utilities {
 
      */
     @SafeVarargs
-    public static <T> ArrayList<T> listFromArgs(T... args) {
+    public static <T> List<T> listFromArgs(T... args) {
         ArrayList<T> list = new ArrayList<>();
 
 //        for (String arg : args) {

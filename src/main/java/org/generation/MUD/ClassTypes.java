@@ -7,12 +7,9 @@ import java.util.HashMap;
 
 //Creiamo una mappa di classi predefinite da cui poter attingere in ogni parte del gioco
 public class ClassTypes {
-    protected HashMap<String, ClassStats> classes = new HashMap<>();
+    public static HashMap<String, ClassStats> classes = new HashMap<>();
 
-    public ClassTypes() {
-        WeaponTypes weaponTypes = new WeaponTypes();
-        ArmorTypes armorTypes = new ArmorTypes();
-
+    static {
         classes.put("paladin", new ClassStats(
                         "Paladin",
                         new Stats(
@@ -22,8 +19,8 @@ public class ClassTypes {
                                 16,
                                 18,
                                 12),
-                        weaponTypes.weapon.get("alabarda"),
-                        armorTypes.armorTypes.get("armatura_ferro")
+                        WeaponTypes.map.get("alabarda"),
+                        ArmorTypes.map.get("armatura_ferro")
                 )
         );
         classes.put("mage", new ClassStats(
@@ -35,8 +32,8 @@ public class ClassTypes {
                                 16,
                                 10,
                                 18),
-                        weaponTypes.weapon.get("bacchetta"),
-                        armorTypes.armorTypes.get("tunica")
+                        WeaponTypes.map.get("bacchetta"),
+                        ArmorTypes.map.get("tunica")
                 )
         );
         classes.put("assassin", new ClassStats(
@@ -48,8 +45,8 @@ public class ClassTypes {
                                 20,
                                 5,
                                 10),
-                        weaponTypes.weapon.get("pugnale"),
-                        armorTypes.armorTypes.get("cappuccio")
+                        WeaponTypes.map.get("pugnale"),
+                        ArmorTypes.map.get("cappuccio")
                 )
         );
         classes.put("bard", new ClassStats(
@@ -61,8 +58,8 @@ public class ClassTypes {
                                 12,
                                 10,
                                 15),
-                        weaponTypes.weapon.get("piffero"),
-                        armorTypes.armorTypes.get("armatura_cuoio")
+                        WeaponTypes.map.get("piffero"),
+                        ArmorTypes.map.get("armatura_cuoio")
                 )
         );
     }

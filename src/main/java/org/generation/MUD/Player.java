@@ -29,7 +29,7 @@ public class Player {
         this.name = "";
         this.gender = "";
         this.classStats = null;
-        this.inventory = null;
+        this.inventory = new Inventory();
         this.playerStats = null;
         this.gold = 0 ;
     }

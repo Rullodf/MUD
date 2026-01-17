@@ -1,0 +1,9 @@
+Elenco dei comandi:
+- goto [uscita]: ti fa passare alla stanza collegata a [uscita]
+- exits: ti mostra tutte le uscite della stanza
+- search: ti mostra tutti gli oggetti interagibili nella stanza
+- interact [oggetto]: interagisci con l'oggetto specificato'
+- talk [persona]: parla con la persona specificata
+- use [oggetto]: usa l'oggetto specificato dall'inventario
+- pick [oggetto]: raccogli l'oggetto specificato e mettilo nell'inventario
+- att [persona]: attacca la persona specificata

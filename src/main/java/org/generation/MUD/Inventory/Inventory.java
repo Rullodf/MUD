@@ -9,7 +9,7 @@ import java.util.HashMap;
 public class Inventory {
     protected HashMap<ItemCategory, ArrayList<Item>> inventory = new HashMap<>();
     protected final int maxWeight = 50;
-    protected int actualWeight;
+    protected double actualWeight;
 
     public Inventory() {
         inventory.put(ItemCategory.ARMOR, new ArrayList<>());
@@ -18,6 +18,11 @@ public class Inventory {
         inventory.put(ItemCategory.CONSUMABLE, new ArrayList<>());
     }
 
+    /**
+     * Prova ad aggiungere un oggetto all'inventario
+     * @param toInsert L'oggetto da aggiungere
+     * @return {@code True} se l'oggetto è stato aggiunto, {@code False} altrimenti
+     */
     public boolean addItem(Item toInsert) {
         if (toInsert.getWeight() + actualWeight > maxWeight) {
             return false;
@@ -31,6 +36,7 @@ public class Inventory {
                 return false;
             }
         }
+        actualWeight += toInsert.getWeight();
         return true;
     }
 
@@ -61,7 +67,7 @@ public class Inventory {
         return inventory.get(category);
     }
 
-    public int getActualWeight() {
+    public double getActualWeight() {
         return actualWeight;
     }
 

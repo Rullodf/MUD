@@ -7,6 +7,8 @@ import org.generation.MUD.item.effect.RemoveVitality;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
+    public static boolean debugMode = true;
+
     static void main() throws InterruptedException {
         GameEngine gameEngine = new GameEngine();
         gameEngine.startGame();

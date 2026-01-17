@@ -1,6 +1,8 @@
 package org.generation.MUD.room;
 
 import org.generation.MUD.Utilities;
+import org.generation.MUD.interactable.Door;
+import org.generation.MUD.interactable.DoorTypes;
 import org.generation.MUD.npc.NPC;
 import org.generation.MUD.npc.NPCTypes;
 
@@ -10,10 +12,10 @@ import java.util.HashMap;
 
 //creiamo la hashmap da usare in ogni parte del gioco
 public class RoomTypes {
-    public HashMap<String, Room> roomsMap = new HashMap<>();
+    static public HashMap<String, Room> map = new HashMap<>();
 
-    public RoomTypes() {
-        roomsMap.put("startMenu", new Room(
+    static {
+        map.put("startMenu", new Room(
                 "startMenu",
                 "Menu Principale",
                 "GIOCO SCHIFOMADO'",
@@ -21,9 +23,10 @@ public class RoomTypes {
                 "",
                 null,
                 null,
-                MapFromArgs("pianura", "pianura1")
+                null,
+                mapFromArgs("pianura", "pianura1")
         ));
-        roomsMap.put("pianura1", new Room(
+        map.put("pianura1", new Room(
                 "pianura1",
                 "Pianura",
                 """
@@ -34,12 +37,14 @@ public class RoomTypes {
                 """
                         Fenomeno , sei tornato all' inizio
                         """,
-                "",
+                "Trovi una porta davanti a te, e una chiave per terra",
                 null,
                 null,
-                MapFromArgs("sentiero", "tutorial")
+                null,
+                //TODO reinserire "sentiero", "tutorial"
+                mapFromArgs()
         ));
-        roomsMap.put("tutorial", new Room(
+        map.put("tutorial", new Room(
                 "tutorial",
                 "Sentiero",
                 """
@@ -49,10 +54,12 @@ public class RoomTypes {
                 "",
                 arrayFromArgs("tutorialGoblin"),
                 null,
-                MapFromArgs("avanti", "stanzaSceltaClasse",
+                null,
+                //TODO reinserire "avanti", "stanzaSceltaClasse",
+                mapFromArgs(
                         "indietro", "pianura1")
         ));
-        roomsMap.put("stanzaSceltaClasse", new Room(
+        map.put("stanzaSceltaClasse", new Room(
                 "stanzaSceltaClasse",
                 "Sentiero",
                 """
@@ -61,21 +68,22 @@ public class RoomTypes {
                         """,
                 "Torni nel luogo dove hai incontrato l'uomo misterioso, ma non lo trovi più...",
                 "",
-                arrayFromArgs("riccardoInIncognito"),
+                arrayFromArgs("riccardoTutorial"),
                 null,
-                MapFromArgs("indietro", "tutorial"),
+                null,
+                mapFromArgs("indietro", "tutorial"),
                 player -> {
-                   NPCTypes a = new NPCTypes();
-                   NPC T_T =  a.npcsMap.get("riccardoTutorial");
-                    Utilities.stampaAMacchina(T_T.toString());
+                    NPC riccardo =  NPCTypes.map.get("riccardoTutorial");
+                    Utilities.stampaDialogoAMacchina(riccardo.getNextDialogue());
                     //dialogo col bro
                     //input dall'utente per scegliere la classe
                     //riassegnazione delle stats e aggiornamento inventario
                 }
         ));
+        DoorTypes.applyDoors();
     }
 
-    public ArrayList<String> arrayFromArgs(String... args) {
+    public static ArrayList<String> arrayFromArgs(String... args) {
         ArrayList<String> list = new ArrayList<>();
 
 //        for (String arg : args) {
@@ -91,7 +99,7 @@ public class RoomTypes {
      * @param args
      * @return
      */
-    public HashMap<String, String> MapFromArgs(String... args) {
+    public static HashMap<String, String> mapFromArgs(String... args) {
         HashMap<String, String> map = new HashMap<>();
 
         for (int i = 0; i < args.length; i += 2) {

@@ -4,6 +4,8 @@ package org.generation.MUD;
     QUESTA E' LA VERA MAIN!!!
  */
 
+import org.generation.MUD.interactable.Interactable;
+import org.generation.MUD.npc.NPCTypes;
 import org.generation.MUD.room.Room;
 import org.generation.MUD.room.RoomActions;
 import org.generation.MUD.room.RoomTypes;
@@ -24,7 +26,7 @@ public class GameEngine {
     public void startGame() {
         Utilities.setLengthMax(30);
         String comando;
-        currentRoom = roomTypes.roomsMap.get("pianura1");
+        currentRoom = RoomTypes.map.get("pianura1");
         changeRoom("menù-iniziale");
 
         while (true) {
@@ -50,8 +52,14 @@ public class GameEngine {
             }
             case RoomActions.TALK -> {
                 if (azione.length != 2) {
+                    IO.println("Sintassi errata.");
                     return false;
                 }
+                if (!currentRoom.getNpcs().contains(azione[1])) {
+                    IO.println("Non ci sono NPC con questo nome.");
+                    return false;
+                }
+                Utilities.stampaDialogoAMacchina(NPCTypes.map.get(azione[1]).getNextDialogue());
             }
             case RoomActions.COLLECT -> {
                 if (azione.length != 2) {
@@ -71,8 +79,19 @@ public class GameEngine {
             }
             case RoomActions.INTERACT -> {
                 if (azione.length != 2) {
+                    IO.println("Sintassi errata.");
                     return false;
                 }
+
+                for (Interactable object : currentRoom.getInteractables() ) {
+                    if (object.getName().equals(azione[1])){
+                        object.interact(player, currentRoom);
+                    }
+                    return true;
+                }
+
+                IO.println("Non puoi interagire con questo oggetto.");
+                return false;
             }
             case RoomActions.PRINT_EXITS -> {
                 if (azione.length != 1) {
@@ -82,13 +101,21 @@ public class GameEngine {
             }
             case RoomActions.CHANGE_ROOM -> {
                 if (azione.length != 2) {
+                    IO.println("Sintassi errata.");
                     return false;
                 }
                 if (!currentRoom.getExits().containsKey(azione[1])) {
+                    IO.println("Non ci sono uscite con questo nome.");
                     return false;
                 }
-
                 changeRoom(azione[1]);
+                return true;
+            }
+            case RoomActions.CHANGE_ROOM_DEBUG -> {
+                if (azione.length != 2) {
+                    return false;
+                }
+                changeRoomDebug(azione[1]);
                 return true;
             }
             case null, default -> {
@@ -102,9 +129,13 @@ public class GameEngine {
     funzione che serve per cambiare stanza. il parametro è la stanza passata dalla funzione 'executeCommmand'
      */
     public void changeRoom(String nomeUscita) {
-        IO.println("\033[2J\033[H"); //questo print è per fare il clear del terminale \033[2J e riportare il cursore in cima \033[H
         String idStanza = currentRoom.getExits().get(nomeUscita);
-        currentRoom = roomTypes.roomsMap.get(idStanza);
+        currentRoom = RoomTypes.map.get(idStanza);
+        currentRoom.enteredRoom(player);
+    }
+
+    public void changeRoomDebug(String idStanza) {
+        currentRoom = RoomTypes.map.get(idStanza);
         currentRoom.enteredRoom(player);
     }
 }
